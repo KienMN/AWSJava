@@ -3,11 +3,11 @@
  */
 public class Main {
 
-    public static String AccessKeyID = "AKIAITNPIQ3TMODHVGGA";
-    public static String SecretAccessKey = "qYcQwe6SSJmvV+iqnGvJAxt/8eF0rEbxtEDrr5Ni";
+    public static String AccessKeyID = "YOUR_ACCESS_KEY";
+    public static String SecretAccessKey = "YOUR_SECRET_KEY";
     public static String Region = "eu-west-1";
-    public static String Key = "photo3.jpg";
-    public static String BucketName = "kienimages";
+    public static String Key = "PhotoName.jpg";
+    public static String BucketName = "BucketName";
 
     public static void main(String[] args) {
         new FileChooserUI();
