@@ -18,8 +18,8 @@ import java.util.List;
 public class RekognitionProcess {
     public static final String COLLECTION_ID = "facesID";
     public static final String S3_BUCKET = "kienimages";
-    public static final String ACCESS_KEY_ID = "AKIAITNPIQ3TMODHVGGA";
-    public static final String SECRET_ACCESS_KEY = "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";
+    public static final String ACCESS_KEY_ID = "ACCESS_KEY_ID";
+    public static final String SECRET_ACCESS_KEY = "SECRET_ACCESS_KEY";
     private static final Float THRESHOLD = 70F;
     public static BasicAWSCredentials CREDENTIALS = new BasicAWSCredentials(ACCESS_KEY_ID, SECRET_ACCESS_KEY);
     public static AmazonRekognition AWS_REKOGNITION = AmazonRekognitionClientBuilder.standard()
