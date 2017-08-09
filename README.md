@@ -2,8 +2,8 @@
 1. Prerequisites
 - AWS Account, AWS IAM Credentials (containting secret key id and secret key): see tutorial of AWS
 - AWS SDK for Java (include aws libs and third party libs in the projects): download from AWS website
-- S3 bucket: creating a S3 bucket and set its name
-Note: Remember regions of each amazon services
+- S3 bucket: creating a S3 bucket and set its name <br/>
+Note: Remember regions of each amazon services <br/>
 Optional:
 - Java Swing to initialize User Interface
 - Java CV to use camera and implete some facial detection algorithms (such as Haar Cascade)
@@ -22,12 +22,13 @@ Optional:
   
 * To use any services of amazon, you should create client
 
-  AmazonRekognition rekognitionClient = AmazonRekognitionClientBuilder.standard()
+  <code>AmazonRekognition rekognitionClient = AmazonRekognitionClientBuilder.standard()
                 .withRegion(region)
                 .withCredentials(new AWSStaticCredentialsProvider(credentials))
                 .build();
-
+  </code>
 * Pair request/result
+  <code>
   //make request
   DetectFacesRequest detectFacesRequest = new DetectFacesRequest()
       .withImage(new Image()
@@ -38,11 +39,14 @@ Optional:
 
   //get result
   DetectFacesResult result = rekognitionClient.detectFaces(detectFacesRequest);
-
+  </code>
+  
 4. AWS Rekognition
 These projects mainly use AWS Rekognition to analyze images and get results. Images can be tranfered to Rekognition by 2 ways:
 - Use ByteBuffer
 - Use S3Object
+  <code>
   Image image = new Image().withS3Object(new S3Object()
                                             .withBucket(bucketName)
                                             .withName(key)));
+  </code>
