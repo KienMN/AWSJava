@@ -22,22 +22,21 @@ Optional:
   
 * To use any services of amazon, you should create client
 
-  <code>AmazonRekognition rekognitionClient = AmazonRekognitionClientBuilder.standard()
-                .withRegion(region)
-                .withCredentials(new AWSStaticCredentialsProvider(credentials))
-                .build();
+  <code>AmazonRekognition rekognitionClient = AmazonRekognitionClientBuilder.standard()<br/>
+                .withRegion(region)<br/>
+                .withCredentials(new AWSStaticCredentialsProvider(credentials))<br/>
+                .build();<br/>
   </code>
 * Pair request/result
   <code>
-  //make request
-  DetectFacesRequest detectFacesRequest = new DetectFacesRequest()
-      .withImage(new Image()
-          .withS3Object(new S3Object()
-              .withBucket(bucketName)
-              .withName(key)))
-      .withAttributes(Attribute.ALL);
-
-  //get result
+  //make request<br/>
+  DetectFacesRequest detectFacesRequest = new DetectFacesRequest()<br/>
+      .withImage(new Image()<br/>
+          .withS3Object(new S3Object()<br/>
+              .withBucket(bucketName)<br/>
+              .withName(key)))<br/>
+      .withAttributes(Attribute.ALL);<br/>
+  //get result<br/>
   DetectFacesResult result = rekognitionClient.detectFaces(detectFacesRequest);
   </code>
   
