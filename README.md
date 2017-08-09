@@ -28,19 +28,18 @@ Optional:
                 .build();<br/>
   </code>
 * Pair request/result
+  + Make request:
   <code>
-  //make request<br/>
-  DetectFacesRequest detectFacesRequest = new DetectFacesRequest()<br/>
-      .withImage(new Image()<br/>
-          .withS3Object(new S3Object()<br/>
-              .withBucket(bucketName)<br/>
-              .withName(key)))<br/>
-      .withAttributes(Attribute.ALL);<br/>
+  DetectFacesRequest detectFacesRequest = new DetectFacesRequest()
+      .withImage(new Image()
+          .withS3Object(new S3Object()
+              .withBucket(bucketName)
+              .withName(key)))
+      .withAttributes(Attribute.ALL);
   </code>
-  <code>
-  //get result<br/>
-  DetectFacesResult result = rekognitionClient.detectFaces(detectFacesRequest);
-  </code>
+
+  + Get result:
+  <code>DetectFacesResult result = rekognitionClient.detectFaces(detectFacesRequest);</code>
   
 4. AWS Rekognition
 These projects mainly use AWS Rekognition to analyze images and get results. Images can be tranfered to Rekognition by 2 ways:
